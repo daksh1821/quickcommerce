@@ -1,0 +1,92 @@
+<div class="form-container">
+    <form id="signup-form" action="/signup" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <input type="text" name="phone" placeholder="Phone Number (optional)">
+        
+        <!-- OTP Section -->
+        <div id="otp-section" style="display:none;">
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+            <button type="button" id="verify-otp" class="btn">Verify OTP</button>
+        </div>
+        
+        <button type="button" id="request-otp" class="btn">Request OTP</button>
+        <button type="submit" id="submit-btn" class="btn" style="display:none;">Sign Up</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('request-otp').addEventListener('click', function() {
+    var email = document.querySelector('input[name="email"]').value;
+    var phone = document.querySelector('input[name="phone"]').value;
+    if (!email && !phone) {
+        alert("Please provide an email or phone number.");
+        return;
+    }
+
+    // Make an AJAX request to request OTP
+    fetch('/auth/request-otp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, phone: phone }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('otp-section').style.display = 'block';
+            document.getElementById('request-otp').style.display = 'none';
+            document.getElementById('submit-btn').style.display = 'inline';
+        } else {
+            alert(data.message || "Failed to send OTP. Please try again."); // Show server-provided message
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error); // Log error for debugging
+        alert("An error occurred. Please try again.");
+    });
+});
+
+
+document.getElementById('verify-otp').addEventListener('click', function() {
+    var otp = document.getElementById('otp').value;
+    
+    fetch('/auth/verify-otp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ otp: otp }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('signup-form').submit();
+        } else {
+            alert("Invalid OTP. Please try again.");
+        }
+    });
+});
+
+// Function to validate password
+function validatePassword(password) {
+    const minLength = 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    
+    return password.length >= minLength && hasUpperCase && hasSpecialChar;
+    alert("form submiited");
+}
+
+// Password validation on form submit
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    const password = document.getElementById('password').value;
+    
+    if (!validatePassword(password)) {
+        alert("Password must be at least 8 characters long, contain at least one uppercase letter, and one special character.");
+        event.preventDefault(); // Prevent form submission
+    }
+});
+</script>

@@ -1,0 +1,426 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(104, 200, 133);
+    margin-bottom: 100px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.hero {
+    position: relative;
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.slider-image {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /*padding-left: 40px;*/
+    padding-top: 80px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Delivery Section */
+.delivery-section {
+    padding: 100px 5%; /* Add padding for top and bottom */
+    background: #96bedc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between content and image */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the maximum width */
+    gap: 40px; /* Gap between the content and the image */
+}
+
+/* Main content styling */
+.content {
+    flex: 1; /* Take up remaining space */
+    padding-right: 20px; /* Space between content and image */
+    text-align: left; /* Align text to the left */
+}
+
+.content h4 {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.content p {
+    color: #555;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 20px; /* Add spacing below the paragraph */
+}
+
+.link {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+    transition: 0.3s;
+}
+
+.link:hover {
+    border-color: #28a745;
+}
+
+/* Main image styling */
+.image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    max-width: 50%; /* Set a max width for the image */
+}
+
+.image img {
+    width: 100%; /* Image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+  /* Product Section */
+.product-section {
+    padding: 60px 5%;
+    background-color: #e7f3fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow:scroll;
+}
+
+.container2 {
+    max-width: 1200px; /* Limits the width for better centering and readability */
+    margin: 0 auto; /* Centers the container on the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container2 h4 {
+    color: #2f8f46;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Makes the subheading more distinctive */
+    letter-spacing: 1px; /* Adds spacing between letters for a refined look */
+}
+
+.container2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px; /* Ensures the grid doesn't stretch too far on large screens */
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Fixed height to keep all cards uniform */
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5; /* Better readability */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+/* Contact Section */
+/* Contact Section */
+.contact-section {
+    margin-left: 180px;
+    display: flex;
+    justify-content: flex-start; /* Aligns the content to the left */
+    padding: 100px 5%;
+    background-color: #ffffff;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: one for form, one for image */
+    max-width: 1200px;
+    gap: 100px; /* Adjust gap between form and image */
+    align-items: center;
+}
+
+.contact-form-container {
+    text-align: left;
+    max-width: 500px; /* Limits the width of the form for better alignment */
+}
+
+.contact-form-container h4 {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-form-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+.contact-form .submit-btn {
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.contact-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image-container img {
+    width: 100%;
+    max-height: 500px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.footer {
+    padding: 40px 5%;
+    background-color: #222;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content h3 {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.social-links img {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.form-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}

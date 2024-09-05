@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{stylesheet}}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">{{siteName}}</div>
+            <ul class="nav-links">
+                {{#each navItems}}
+                    <li><a href="{{url}}">{{label}}</a></li>
+                {{/each}}
+                <li><a href="{{contactUrl}}" class="contact-btn">{{contactLabel}}</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="slider">
+            <img src="/images/back.png" alt="Homepage Image" class="slider-image">
+        </div>
+        <div class="hero-content">
+            <h1>{{heroTitle}}</h1>
+            <p>{{heroSubtitle}}</p>
+            <a href="{{ctaUrl}}" class="btn">{{ctaLabel}}</a>
+        </div>
+    </section>
+    <section class="delivery-section">
+    <div class="container">
+        <!-- Main content -->
+        <div class="content">
+            <h4>FAST GROCERY DELIVERY</h4>
+            <h1>{{deliveryTitle}}</h1>
+            <p>{{deliveryDescription}}</p>
+            <a href="/contact" class="link">{{deliveryLinkText}}</a>
+        </div>
+
+        <!-- Main image -->
+        <div class="image">
+            <img src="/images/delivery.png" alt="Delivery Image">
+        </div>
+    </div>
+</section>
+
+
+    <section class="product-section">
+    <div class="container2">
+        <h4>GROCERY SELECTION</h4>
+        <h1>Explore a wide range of products</h1>
+        <div class="product-grid">
+            {{#each products}}
+                <div class="product-card">
+                    <a href="{{this.link}}">
+                        <img src="{{this.image}}" alt="{{this.title}}">
+                        <div class="product-info">
+                            <h3>{{this.title}} &#8250;</h3>
+                            <p>{{this.description}}</p>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+{{!-- Contact Section --}}
+<section class="contact-section">
+    <div class="contact-container">
+        <div class="contact-form-container">
+            <h4>GET IN TOUCH</h4>
+            <h1>Contact Us</h1>
+            <form class="contact-form" action="/contact" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn submit-btn">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-image-container">
+            <img src="/images/contact.png" alt="Get in Touch">
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Connect with us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://github.com/daksh1821" target="_blank"><img src="/images/github.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.instagram.com/daksh_j28/" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a></li>
+                    <li><a href="https://www.linkedin.com/in/daksh-jain-5620b5251" target="_blank"><img src="/images/linkedin.png" alt="LinkedIn"></a></li>
+                </ul>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:daksh2872004@gmail.com">daksh2872004@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+919358440540">+91-9358440540</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{script}}"></script>
+</body>
+</html>

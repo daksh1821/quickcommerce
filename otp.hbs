@@ -1,0 +1,9 @@
+{{> header}}
+<div class="form-container">
+    <form action="/verify-otp" method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="otp" placeholder="Enter OTP" required>
+        <button type="submit" class="btn">Verify OTP</button>
+    </form>
+</div>
+{{> footer}}
